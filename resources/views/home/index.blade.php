@@ -386,78 +386,16 @@
     </div>
     <!-- Recent Product End -->
 
-    <!-- Review Start -->
-    <div class="review">
-        <div class="container-fluid">
-            <div class="row align-items-center review-slider normal-slider">
-                <div class="col-md-6">
-                    <div class="review-slider-item">
-                        <div class="review-img">
-                           <img src="{{asset('assets')}}/img/review-1.jpg" alt="Image">
-                        </div>
-                        <div class="review-text">
-                            <h2>Customer Name</h2>
-                            <h3>Profession</h3>
-                            <div class="ratting">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="review-slider-item">
-                        <div class="review-img">
-                           <img src="{{asset('assets')}}/img/review-2.jpg" alt="Image">
-                        </div>
-                        <div class="review-text">
-                            <h2>Customer Name</h2>
-                            <h3>Profession</h3>
-                            <div class="ratting">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="review-slider-item">
-                        <div class="review-img">
-                           <img src="{{asset('assets')}}/img/review-3.jpg" alt="Image">
-                        </div>
-                        <div class="review-text">
-                            <h2>Customer Name</h2>
-                            <h3>Profession</h3>
-                            <div class="ratting">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae nunc eget leo finibus luctus et vitae lorem
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Review End -->
 
 @endsection
 
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/slick/slick.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>

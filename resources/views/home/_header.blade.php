@@ -1,5 +1,4 @@
 
-<body>
 <!-- Top bar Start -->
 <div class="top-bar">
     <div class="container-fluid">

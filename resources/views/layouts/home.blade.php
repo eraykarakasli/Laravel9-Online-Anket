@@ -29,7 +29,7 @@
 <body>
 
 @include('home._header')
-
+@include('home._slider')
 
 @section('content')
 
@@ -39,5 +39,8 @@
 
 @yield('footerjs')
 </body>
+
 </html>
+
+
 
