@@ -73,18 +73,33 @@
                 <a href="#" class="dropdown-item text-center">See all notifications</a>
             </div>
         </div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src="{{asset('assets')}}/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">John Doe</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
-                <a href="#" class="dropdown-item">Log Out</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ZAFER MANAR
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Jhon Doe</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
             </div>
         </div>
     </div>
 </nav>
 <!-- Navbar End -->
+<!-- JavaScript Libraries -->
+<script src="{{asset('assets')}}/admin/code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{{asset('assets')}}/admin/cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/chart/chart.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/easing/easing.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/waypoints/waypoints.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="{{asset('assets')}}/admin/js/main.js"></script>
+
 

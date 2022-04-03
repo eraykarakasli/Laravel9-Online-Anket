@@ -8,21 +8,24 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Favicon -->
     <link href="{{asset('assets')}}/admin/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="/https://fonts.googleapis.com">
-    <link rel="preconnect" href="/https://fonts.gstatic.com" crossorigin>
-    <link href="/https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="{{asset('assets')}}/admin/fonts.googleapis.com">
+    <link rel="preconnect" href="{{asset('assets')}}/admin/fonts.gstatic.com" crossorigin>
+    <link href="{{asset('assets')}}/admin/fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
-    <link href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="/https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{asset('assets')}}/admin/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{{asset('assets')}}/admin/cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{asset('assets')}}/admin/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="{{asset('assets')}}/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('assets')}}/admin/css/bootstrap.min.css" rel="stylesheet">
