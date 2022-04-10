@@ -75,7 +75,7 @@
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ZAFER MANAR
+                 -  User
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Jhon Doe</a>

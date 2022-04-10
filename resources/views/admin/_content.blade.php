@@ -203,7 +203,6 @@
                         <a href="">Show All</a>
                     </div>
                     <div id="calender"></div>
-
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-xl-4">
