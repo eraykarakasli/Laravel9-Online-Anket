@@ -1,8 +1,8 @@
 <!-- Sidebar Start -->
-<div class="sidebar pe-4 pb-3">
+<div class="sidebar pe-4 pb-3 " >
     <nav class="navbar bg-light navbar-light">
-        <a href="index.html" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+        <a href="{{ route('adminhome') }}" class="navbar-brand mx-4 mb-4">
+            <h3 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i></h3>OnlineSurvey Admin
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
@@ -15,28 +15,18 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{asset('assets')}}/admin/button.html" class="dropdown-item">Buttons</a>
-                    <a href="{{asset('assets')}}/admin/typography.html" class="dropdown-item">Typography</a>
-                    <a href="{{asset('assets')}}/admin/element.html" class="dropdown-item">Other Elements</a>
-                </div>
-            </div>
-            <a href="{{asset('assets')}}/admin/widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+            <a href="{{ route('admin_category') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Category</a>
+
+            <a href="#" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>aaaa</a>
+
+
+
             <a href="{{asset('assets')}}/admin/form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
             <a href="{{asset('assets')}}/admin/table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-            <a href="{{asset('assets')}}/admin/chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="{{asset('assets')}}/admin/signin.html" class="dropdown-item">Sign In</a>
-                    <a href="{{asset('assets')}}/admin/signup.html" class="dropdown-item">Sign Up</a>
-                    <a href="{{asset('assets')}}/admin/404.html" class="dropdown-item">404 Error</a>
-                    <a href="{{asset('assets')}}/admin/blank.html" class="dropdown-item">Blank Page</a>
-                </div>
-            </div>
+
+
+            <a href="{{asset('assets')}}/admin/" class="nav-item nav-link" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Logout</a>
+
         </div>
     </nav>
 </div>

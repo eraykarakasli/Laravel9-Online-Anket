@@ -32,11 +32,12 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 //admin login check
     Route::post('/logincheck',[\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
 
-    Route::get('/category',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_category');
-    Route::get('/category/add',[\App\Http\Controllers\Admin\HomeController::class, 'add'])->name('admin_category_add');
-    Route::get('/category/update',[\App\Http\Controllers\Admin\HomeController::class, 'update'])->name('admin_category_update');
-    Route::get('/category/delete',[\App\Http\Controllers\Admin\HomeController::class, 'destroy'])->name('admin_category_delete');
-    Route::get('/category/show',[\App\Http\Controllers\Admin\HomeController::class, 'show'])->name('admin_category_show');
+    Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
+    Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
+    Route::post('category/create',[\App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin_category_create');
+    Route::post('category/update',[\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
+    Route::get('category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
+    Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

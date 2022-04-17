@@ -1,21 +1,16 @@
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-        <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
-    </a>
-    <a href="#" class="sidebar-toggler flex-shrink-0">
-        <i class="fa fa-bars"></i>
-    </a>
+<nav class="navbar navbar-expand bg-light navbar-light sticky-top float-right px-4 py-0">
 
 
-    <div class="navbar-nav align-items-center ms-auto">
+
+    <div class="navbar-nav align-items-center ms-auto" ">
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 User
             </button>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Mehmet Eray Karakaşlı</a>
-                <a class="dropdown-item" href="/">logout</a>
+
                 <a class="dropdown-item" href="#">Something else here</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Separated link</a>

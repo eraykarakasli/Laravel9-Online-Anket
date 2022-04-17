@@ -39,9 +39,8 @@
 </div>
 @include('admin._header')
 @include('admin._sidebar')
-@include('admin._content')
- @section('content')
- @endsection
+
+ @yield('content')
 @include('admin._footer')
 @yield('footer')
 
