@@ -17,7 +17,7 @@
         <div class="navbar-nav w-100">
             <a href="{{ route('admin_category') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Category</a>
 
-            <a href="#" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>aaaa</a>
+            <a href="{{ route('admin_surveys') }}" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Surveys</a>
 
 
 

@@ -39,8 +39,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::post('category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
     Route::get('category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
     Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
-});
 
+#Survey
+ Route::prefix('survey')->group(function () {
+     Route::get('/', [\App\Http\Controllers\Admin\SurveyController::class, 'index'])->name('admin_surveys');
+     Route::get('/create', [\App\Http\Controllers\Admin\SurveyController::class, 'create'])->name('admin_survey_create');
+     Route::post('store', [\App\Http\Controllers\Admin\SurveyController::class, 'store'])->name('admin_survey_store');
+     Route::get('edit/{id}', [\App\Http\Controllers\Admin\SurveyController::class, 'edit'])->name('admin_survey_edit');
+     Route::post('update/{id}', [\App\Http\Controllers\Admin\SurveyController::class, 'update'])->name('admin_survey_update');
+     Route::get('delete/{id}', [\App\Http\Controllers\Admin\SurveyController::class, 'destroy'])->name('admin_survey_delete');
+     Route::get('show', [\App\Http\Controllers\Admin\SurveyController::class, 'show'])->name('admin_survey_show');
+ });
+});
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
