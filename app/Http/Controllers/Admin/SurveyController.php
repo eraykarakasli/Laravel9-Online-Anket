@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Survey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class SurveyController extends Controller
 {
@@ -46,9 +47,11 @@ class SurveyController extends Controller
         $data -> description = $request->input('description');
         $data -> category_id = $request->input('category_id');
         $data -> user_id = Auth::id();
-        $data -> image = $request ->input('image');
         $data -> detail = $request->input('detail');
         $data -> slug = $request->input('slug');
+
+        $data -> image = Storage::putFile('images',$request->file('image'));//file upload
+
         $data -> save();
         return redirect()->route('admin_surveys');
 }
@@ -93,9 +96,9 @@ class SurveyController extends Controller
         $data -> description = $request->input('description');
         $data -> category_id = $request->input('category_id');
         $data -> user_id = Auth::id();
-        $data -> image = $request ->input('image');
         $data -> detail = $request->input('detail');
         $data -> slug = $request->input('slug');
+        $data-> image = Storage::putFile('images', $request->file('image'));
         $data -> save();
         return redirect()->route('admin_surveys');
     }

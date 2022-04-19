@@ -27,6 +27,7 @@
                                         <th scope="col">Category</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Status</th>
+                                        <th scope="col">Image</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -38,6 +39,11 @@
                                             <td>{{$rs->category_id}}</td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->status}}</td>
+                                            <td>
+                                                @if($rs->image)
+                                                    <img src="{{ Storage::url($rs->image) }}" height="100" alt="">
+                                                @endif
+                                            </td>
                                             <td><a href="{{route('admin_survey_edit', ['id'=>$rs->id])}}">Edit</a> </td>
                                             <td><a href="{{route('admin_survey_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete !! are you sure?')" >Delete</a></td>
                                     </tr>

@@ -22,7 +22,7 @@
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <form role="form" action="{{ route('admin_survey_store') }}" method="post">
+                                <form role="form" action="{{ route('admin_survey_store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-lg-4">
 
@@ -60,8 +60,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label>Image</label>
-                                        <input type="text" name="image" class="form-control" >
+                                        <input type="file" name="image" class="form-control" >
+
+
                                     </div>
+
                                     <div class="mb-3">
                                         <label>Slug</label>
                                         <input type="text" name="slug" class="form-control" >

@@ -24,7 +24,7 @@
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <form role="form" action="{{route('admin_survey_update',['id'=>$data->id])}}" method="post">
+                                <form role="form" action="{{route('admin_survey_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
 
@@ -62,7 +62,11 @@
                                     </div>
                                     <div class="mb-3">
                                         <label>Image</label>
-                                        <input type="text" name="image" value="{{$data->image}}"  class="form-control" >
+                                        <input type="file" name="image" value="{{$data->image}}"  class="form-control" >
+
+                                    @if($data->image)
+                                        <img src="{{Storage::url($data->image)}}" height="100" alt="">
+                                    @endif
                                     </div>
                                     <div class="mb-3">
                                         <label>Slug</label>

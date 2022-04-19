@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title',150);
             $table->string('keyword')->nullable();
             $table->string('description')->nullable();
-            $table->string('image',75);
+            $table->string('image',100);
             $table->integer('category_id')->nullable();
             $table->integer('user_id')->nullable();
             $table->text('detail')->change();
