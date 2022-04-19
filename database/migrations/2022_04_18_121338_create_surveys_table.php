@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('title',150);
             $table->string('keyword')->nullable();
             $table->string('description')->nullable();
-            $table->string('image',100);
+            $table->string('image',100)->nullable();
             $table->integer('category_id')->nullable();
             $table->integer('user_id')->nullable();
-            $table->text('detail')->change();
+            $table->text('detail')->nullable();
             $table->string('slug',100)->nullable();
             $table->string('status',10)->nullable()->default('False');
             $table->timestamps();

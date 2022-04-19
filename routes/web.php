@@ -31,7 +31,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('/login',[\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');
 //admin login check
     Route::post('/logincheck',[\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
-
+#Survey Category
     Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
     Route::get('category/edit/{id}',[\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
@@ -50,6 +50,13 @@ Route::middleware('auth')->prefix('admin')->group(function (){
      Route::get('delete/{id}', [\App\Http\Controllers\Admin\SurveyController::class, 'destroy'])->name('admin_survey_delete');
      Route::get('show', [\App\Http\Controllers\Admin\SurveyController::class, 'show'])->name('admin_survey_show');
  });
+ #Survey Image Gallery
+    Route::prefix('image')->group(function () {
+
+        Route::get('create/{survey_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_create');
+        Route::post('store/{survey_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+        Route::get('delete/{id}/{survey_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+    });
 });
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
