@@ -7,6 +7,15 @@
 
 @section('content')
 
+@section('javascript')
+    <!-- include summernote css/js -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+@endsection
+
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
         <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
@@ -34,7 +43,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label>Keywords</label>
-                                        <input type="text" name="keywords" value="{{$data->keywords}}"  class="form-control" >
+                                        <input type="text" name="keyword" value="{{$data->keyword}}"  class="form-control" >
                                     </div>
                                     <div class="mb-3">
                                         <label>Description</label>
@@ -43,7 +52,13 @@
 
                                     <div class="mb-3">
                                         <label>Detail</label>
-                                        <input type="text" name="detail" value="{{$data->detail}}"  class="form-control" >
+                                        <textarea id="summernote" type="text" name="detail">{{$data->detail}}</textarea>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('#summernote').summernote();
+                                            });
+                                        </script>
+
                                     </div>
                                     <div class="mb-3">
                                         <label>Image</label>
