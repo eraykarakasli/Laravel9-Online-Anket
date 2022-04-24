@@ -16,7 +16,7 @@
 
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
+        <div class="container-lg">
 
             <div class="col-md-6 text-center">
                 <h2>Add Images</h2>
@@ -46,18 +46,19 @@
                     </div>
             </div>
         </div>
-            <table  class="table table-striped table-hover table-secondary">
-                <thead  class="thead-light">
+            <div class="container-xl">
+            <table  class="table table-striped table-hover table-secondary " >
+                <thead  class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Title</th>
+                    <th scope="col" >Title</th>
                     <th scope="col">Image</th>
                     <th scope="col">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
-                @foreach ($images as $rs)
 
+                @foreach ($images as $rs)
+                    <tbody >
                     <td> {{$rs->id}}</td>
                     <td>{{$rs->title}}</td>
                     <td>
@@ -71,6 +72,7 @@
                  @endforeach
                 </tbody>
             </table>
+            </div>
             </div>
         </div>
     </div>
