@@ -42,7 +42,7 @@
 
  @yield('content')
 @include('admin._footer')
-@yield('footer')
+
 
 </body>
 </html>

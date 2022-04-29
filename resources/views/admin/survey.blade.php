@@ -7,17 +7,17 @@
 @section('content')
 
     <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
+    <div class="container-fluid w-100 p-3">
 
-        <div class="row w-auto ms-4 bg-light rounded align-items-center justify-content-center mx-0">
+        <div class="row w-100 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
 
-            <div class="col-md-6 text-left">
+            <div class="col-md-8 text-left">
                 <h3 class="card-title">Surveys</h3>
 
                 <!-- Table Start -->
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
-                        <div class="col-sm-12 col-xl-6">
+                        <div class="col-md-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
                                 <a href="{{route('admin_survey_create')}}" type="button" class="btn btn-primary m-2">Add Surveys</a>
                                 <table  class="table table-striped table-hover table-secondary">

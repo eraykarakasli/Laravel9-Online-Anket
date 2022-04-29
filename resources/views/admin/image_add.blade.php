@@ -15,7 +15,7 @@
     @endsection
 
     <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
+    <div class="container-fluid pt-4 px-4 col-7">
         <div class="container-lg">
 
             <div class="col-md-6 text-center">
