@@ -21,8 +21,8 @@
 
 
 
-            <a href="{{asset('assets')}}/admin/form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
-            <a href="{{asset('assets')}}/admin/table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
+            <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Settings</a>
+            <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Boş</a>
 
 
             <a href="{{asset('assets')}}/admin/" class="nav-item nav-link" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Logout</a>

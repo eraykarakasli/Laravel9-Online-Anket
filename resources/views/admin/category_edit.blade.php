@@ -7,7 +7,7 @@
 @section('content')
 
     <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
+    <div class="container-fluid pt-4 px-4 bg-light">
         <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
                 <h3>Edit Category</h3>
                 <div class="container-fluid pt-4 px-4">

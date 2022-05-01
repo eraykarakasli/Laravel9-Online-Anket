@@ -17,8 +17,9 @@
 @endsection
 
     <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
+    <div class="container-fluid pt-4 px-4 bg-light">
+        <div class="row w-100 p-4 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
+            <div class="col-md-6 text-center">
                 <h3>Edit Survey</h3>
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
@@ -26,11 +27,11 @@
                             <div class="bg-light rounded h-100 p-4">
                                 <form role="form" action="{{route('admin_survey_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="mb-3">
+                                    <div class="mb-4">
 
                                         <label >Parent</label>
 
-                                        <select class="form-control select2" name="category_id">
+                                        <select class="form-control select2 " size="1" name="category_id">
                                             @foreach ($datalist as $rs)
                                                 <option value="{{ $rs->id}}" @if ($rs->id == $data->category_id) selected="selected" @endif > {{ $rs->title}} </option>
                                             @endforeach
@@ -72,10 +73,10 @@
                                         <label>Slug</label>
                                         <input type="text" name="slug" value="{{$data->slug}}"  class="form-control" >
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-4" >
                                         <label>Status</label>
-                                        <select class="form-select" name="status">
-                                            <option selected="selected">{{$data->status}}</option>
+                                        <select class="form-select" size="1" name="status">
+                                            <option selected="selected" >{{$data->status}}</option>
                                             <option >True</option>
                                             <option >False</option>
                                         </select>

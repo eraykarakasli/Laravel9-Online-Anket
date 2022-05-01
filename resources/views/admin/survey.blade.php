@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <!-- Blank Start -->
+    <!-- survey blade-->
     <div class="container-fluid w-100 p-3">
 
         <div class="row w-100 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
