@@ -28,7 +28,7 @@ class SurveyController extends Controller
      */
     public function create()
     {
-        $datalist= Category::all();
+        $datalist = Category::with('childen')->get();
        return view('admin.survey_add', ['datalist'=>$datalist]);
     }
 
@@ -76,7 +76,7 @@ class SurveyController extends Controller
     public function edit(Survey $survey,$id)
     {
         $data = Survey::find($id);
-        $datalist = Category::all();
+        $datalist = Category::with('childen')->get();
 
         return view('admin.survey_edit',['data'=>$data,'datalist'=>$datalist]);
     }

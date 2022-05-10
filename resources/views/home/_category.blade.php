@@ -1,35 +1,27 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a href="#" class="navbar-brand">MENU</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+@php
+    $parentCategories = \App\Http\Controllers\HomeController::categoryList()
+@endphp
+<div class="navbar navbar-expand-md bg-dark navbar-dark ">
+    <ul class="nav nav-tabs">
+        <li class="nav-item dropdown bg-dark">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Surveys</a>
+            @foreach($parentCategories as $rs)
+            <div class="dropdown-menu">
+                <a class="dropdown-item">{{$rs->title}}</a>
+                @if(count($rs->children))
+                    @include('home.categorytree',['children'=>$rs->children])
+                @endif
 
-    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav mr-auto">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="product-list.html" class="nav-item nav-link">Products</a>
-            <a href="product-detail.html" class="nav-item nav-link">Product Detail</a>
-            <a href="cart.html" class="nav-item nav-link">Cart</a>
-            <a href="checkout.html" class="nav-item nav-link">Checkout</a>
-            <a href="my-account.html" class="nav-item nav-link">My Account</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">More Pages</a>
-                <div class="dropdown-menu">
-                    <a href="wishlist.html" class="dropdown-item">Wishlist</a>
-                    <a href="login.html" class="dropdown-item">Login & Register</a>
-                    <a href="contact.html" class="dropdown-item">Contact Us</a>
-                </div>
             </div>
-        </div>
-        <div class="navbar-nav ml-auto">
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
-                <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">Login</a>
-                    <a href="#" class="dropdown-item">Register</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+            @endforeach
+        </li>
+        <li class="nav-item bg-dark">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item bg-dark">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+
+</div>
 <!-- Nav Bar End -->

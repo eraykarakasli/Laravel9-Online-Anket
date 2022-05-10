@@ -7,8 +7,10 @@
 @section('content')
 
     <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
+    <div class="container-fluid mw-100 p-3" >
+
+        <div class="row w-100 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
+            <div class="col-md-6 text-center" style="height: 1000px;">
                 <h3>Add Category</h3>
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
@@ -23,7 +25,7 @@
                                         <select class="form-control select2" name="parent_id">
                                             <option value="0" selected="selected">Main Category</option>
                                             @foreach ($datalist as $rs)
-                                                <option value="{{ $rs->id}}">{{ $rs->title}}</option>
+                                                <option value="{{ $rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                             @endforeach
                                         </select>
 

@@ -11,13 +11,13 @@
     <div class="container-fluid pt-4 px-4 col-7 bg-light">
         <div class="container-lg bg-light">
 
-            <div class="col-md-6 text-center bg-light">
+            <div class="col-md-6 text-center bg-light" >
                 <h2>Add Images</h2>
-                <div class="container-fluid pt-4 px-4">
-                    <div class="row g-4">
+                <div class="container-fluid pt-4 px-4" >
+                    <div class="row g-4" >
                         <h3>Anket : {{$data->title}}</h3>
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="bg-light rounded h-100 p-4">
+                        <div class="col-sm-12 col-xl-6" >
+                            <div class="bg-light rounded h-100 p-4" >
                                 <form role="form" action="{{ route('admin_image_store', ['survey_id'=>$data->id]) }}" method="post" enctype="multipart/form-data">
 
                                     @csrf
@@ -39,8 +39,8 @@
                     </div>
             </div>
         </div>
-            <div class="container-xl">
-            <table  class="table table-striped table-hover table-secondary " >
+            <div class="container-xl"  style="height: 1000px;">
+            <table  class="table table-striped table-hover table-secondary "  >
                 <thead  class="thead-dark">
                 <tr>
                     <th scope="col">Id</th>

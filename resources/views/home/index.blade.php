@@ -9,6 +9,7 @@
 
 
 @section('content')
+    @include('home._category')
     @include('home._menu')
     @include('home._slider')
     <!-- Category Start-->
