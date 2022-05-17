@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('title')->nullable();
+            $table->string('title')->nullable()->change();
             $table->string('keyword')->nullable();
             $table->string('description')->nullable();
             $table->string('company',100)->nullable();

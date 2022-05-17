@@ -10,7 +10,7 @@
                 <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
             </div>
             <div class="ms-3">
-                <h6 class="mb-0">Mehmet Eray Karakaşlı</h6>
+                <h4 class="mb-0">{{\Illuminate\Support\Facades\Auth::user()->name }}</h4>
                 <span>Admin</span>
             </div>
         </div>
@@ -24,9 +24,10 @@
             <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Settings</a>
             <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Boş</a>
 
+            @auth
 
-            <a href="{{asset('assets')}}/admin/" class="nav-item nav-link" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Logout</a>
-
+            <a href="{{route('admin_logout')}}" class="nav-item nav-link" ><i class="far fa-file-alt me-2"></i>Logout</a>
+            @endauth
         </div>
     </nav>
 </div>

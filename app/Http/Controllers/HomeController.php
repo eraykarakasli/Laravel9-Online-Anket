@@ -3,24 +3,60 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Image;
+use App\Models\Message;
+use App\Models\Place;
+use App\Models\Review;
+use App\Models\Setting;
+use App\Models\Survey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Context;
 
 class HomeController extends Controller
 {
-    public static function categoryList()
+
+    public static function getsetting()
     {
-        return Category::where('parent_id','=',0)->with('children')->get();
+        return Setting::first();
+    }
+
+    public static function categorylist()
+    {
+        return Category::where('parent_id','=', 0)->with('children')->get();
     }
 
     public function index(){
+        $setting =Setting::first();
 
-        return view('home.index');
+
+        $data = [
+            'setting'=>$setting
+        ];
+        return view('home.index',$data);
     }
 
-    public function aboutus()
-    {
-        return view('home.about');
+    public function aboutus(){
+        $setting =Setting::first();
+        return view('home.about',['setting'=>$setting]);
+    }
+
+    public function references(){
+        $setting =Setting::first();
+        return view('home.references',['setting'=>$setting]);
+    }
+
+    public function faq(){
+        $datalist=Faq::all()->sortBy('position');
+        return view('home.faq',['datalist'=>$datalist]);
+    }
+
+
+    public function contact(){
+        $setting =Setting::first();
+        return view('home.contact',['setting'=>$setting]);
     }
 
     public function login()

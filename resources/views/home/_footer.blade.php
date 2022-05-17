@@ -7,9 +7,9 @@
                 <div class="footer-widget">
                     <h2>Get in Touch</h2>
                     <div class="contact-info">
-                        <p><i class="fa fa-map-marker"></i>123 E Store, Los Angeles, USA</p>
-                        <p><i class="fa fa-envelope"></i>email@example.com</p>
-                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                        <p><i class="fa fa-map-marker"></i>{{$setting->adress}}</p>
+                        <p><i class="fa fa-envelope"></i>{{$setting->email}}</p>
+                        <p><i class="fa fa-phone"></i>{{$setting->phone}}</p>
                     </div>
                 </div>
             </div>
@@ -19,11 +19,20 @@
                     <h2>Follow Us</h2>
                     <div class="contact-info">
                         <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a>
+                            @if($setting->twitter !=null)
+                                <a href="{{$setting->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
+                            @endif
+                            @if($setting->facebook !=null)
+                                    <a href="{{$setting->facebook}}target="_blank""><i class="fab fa-facebook-f"></i></a>
+                            @endif
+                                <a href="www.linkedin.com"target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            @if($setting->instagram !=null)
+                                    <a href="{{$setting->instagram}}target="_blank""><i class="fab fa-instagram"></i></a>
+                                @endif
+                            @if($setting->youtube !=null)
+                                    <a href="{{$setting->youtube}}target="_blank""><i class="fab fa-youtube"></i></a>
+                                @endif
+
                         </div>
                     </div>
                 </div>
@@ -33,7 +42,7 @@
                 <div class="footer-widget">
                     <h2>Company Info</h2>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="{{$setting->aboutus}}">About Us</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms & Condition</a></li>
                     </ul>
@@ -77,11 +86,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 copyright">
-                <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
+                <p>Copyright &copy; <a href="https://htmlcodex.com">Eraycode01 A.Ş.</a>. All Rights Reserved</p>
             </div>
 
             <div class="col-md-6 template-by">
-                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                <p>Template By <a href="https://htmlcodex.com">Eraycode01 A.Ş.</a></p>
             </div>
         </div>
     </div>

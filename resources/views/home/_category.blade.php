@@ -1,27 +1,41 @@
 @php
     $parentCategories = \App\Http\Controllers\HomeController::categoryList()
 @endphp
-<div class="navbar navbar-expand-md bg-dark navbar-dark ">
-    <ul class="nav nav-tabs">
-        <li class="nav-item dropdown bg-dark">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Surveys</a>
-            @foreach($parentCategories as $rs)
-            <div class="dropdown-menu">
-                <a class="dropdown-item">{{$rs->title}}</a>
-                @if(count($rs->children))
-                    @include('home.categorytree',['children'=>$rs->children])
-                @endif
+<div class="container-fluid ">
+    <ul class="nav nav-tabs ">
+        <li class="nav-item navbar-dark">
+            <a class="nav-link dropdown-toggle" data-toggle="collapse" href="#ui-basic" aria-expanded="true" >
+                <span class="menu-title"><i class=""></i>Categories</span>
+                <ul class="category-list ">
+                    @foreach($parentCategories as $rs)
+                </ul>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">{{$rs->title}}</a>
+                        <div class="custom-menu">
+                            <div class="row">
+                                @if(count((array)$rs->children))
+                                    <ul class="navbar-dark ">
+                                        @include('home.categorytree',['children'=>$rs->children])
+                                    </ul>
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach
 
+                </ul>
             </div>
-            @endforeach
         </li>
-        <li class="nav-item bg-dark">
+
+
+        <li class="nav-item navbar-dark">
             <a class="nav-link" href="#">Link</a>
         </li>
-        <li class="nav-item bg-dark">
-            <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-    </ul>
 
+    </ul>
 </div>
+
 <!-- Nav Bar End -->

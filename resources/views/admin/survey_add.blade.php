@@ -30,7 +30,7 @@
 
                                         <select class="custom-select" name="category_id" style="width: 100%;">
                                             @foreach ($datalist as $rs)
-                                                <option value="{{ $rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</option>
+                                                <option value="{{ $rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
                                             @endforeach
                                         </select>
 

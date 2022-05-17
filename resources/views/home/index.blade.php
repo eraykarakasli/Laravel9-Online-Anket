@@ -1,11 +1,14 @@
+@php
+    $setting= \App\Http\Controllers\HomeController::getsetting()
+@endphp
 @extends('layouts.home')
 
-@section('title', 'Online Survey')
+@section('title', $setting->title)
 @section('description')
-    Türkiye'nin en güvenilir ve en doğru sonuçları bulundurur Online Anket sitesi.
+    {{$setting->description}}
 @endsection
 
-@section('keywords','Anket, Online Anket, Online Survey')
+@section('keyword',$setting->keyword)
 
 
 @section('content')

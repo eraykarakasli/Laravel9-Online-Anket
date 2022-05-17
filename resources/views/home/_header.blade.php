@@ -21,19 +21,28 @@
 
             <div class="col-sm-5">
 
-                <div class="user">
-                    <a href="wishlist.html" class="btn wishlist">
-                        <i class="fa fa-heart"></i>
-                        <span>(0)</span>
-                    </a>
-                    <a href="cart.html" class="btn cart">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span>(0)</span>
-                    </a>
-                </div>
+                    @auth()
+                    <div class="user">
+                        <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{Auth::user()->name}}
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Mehmet Eray Karakaşlı</a>
 
-            </div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
+                        </div>
+                    </div>
+                     @endauth
+                    @guest
+                            <div class="user bg-light">
+                                <button type="button" class="btn" >
+                                <a href="register">Register</a> / <a href="login"> Log in</a>
+                                </button>
 
+                            </div>
+                        @endguest
         </div>
     </div>
 </div>

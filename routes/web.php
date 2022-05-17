@@ -1,4 +1,9 @@
+
 <?php
+
+if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
+    error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+}
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +26,11 @@ Route::get('/welcome', function () {
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
-
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 
@@ -31,6 +40,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::get('/login',[\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('admin_login');
 //admin login check
     Route::post('/logincheck',[\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
+    Route::get('/logout', [\App\Http\Controllers\Admin\HomeController::class, 'logout'])->name('admin_logout');
 #Survey Category
     Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');

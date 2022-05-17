@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
 
     protected $appends = [
-        'parent',
+        'parent'
         ];
     #one to many
     public function surveys()
@@ -25,7 +25,7 @@ class Category extends Model
     #one to many
     public function children()
     {
-        return $this->belongsTo(Category::class,'parent_id');
+        return $this->hasMany(Category::class,'parent_id');
     }
 
 }

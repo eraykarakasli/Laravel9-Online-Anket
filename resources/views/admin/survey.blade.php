@@ -35,8 +35,9 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($datalist as $rs)
+                                        <tr class="table-info">
                                             <td> {{$rs->id}}</td>
-                                            <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title)}}</td>
+                                            <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title )}}</td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td>
@@ -59,7 +60,7 @@
                                             <td>
                                                 <a href="{{route('admin_survey_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete !! are you sure?')" >Delete</a>
                                             </td>
-                                    </tr>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

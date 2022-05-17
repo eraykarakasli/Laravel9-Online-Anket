@@ -44,23 +44,19 @@
                     </div>
                     <div class="mb-3">
                         <label>Keywords</label>
-                        <input type="text" name="keyword" value="{{$data->keyword}}"
-                               class="form-control">
+                        <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Description</label>
-                        <input type="text" name="description" value="{{$data->description}}"
-                               class="form-control">
+                        <input type="text" name="description" value="{{$data->description}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Company</label>
-                        <input type="text" name="company" value="{{$data->company}}"
-                               class="form-control">
+                        <input type="text" name="company" value="{{$data->company}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Address</label>
-                        <input type="text" name="address" value="{{$data->address}}"
-                               class="form-control">
+                        <input type="text" name="address" value="{{$data->address}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Phone</label>
@@ -154,14 +150,6 @@
                                     @csrf
                                     <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
 
-
-
-
-
-
-
-
-
                                     <script>
                                         $(document).ready(function () {
                                             $('#aboutus').summernote();
@@ -169,8 +157,6 @@
                                             $('#references').summernote();
                                         });
                                     </script>
-
-
 
                                     <button type="submit" class="btn btn-primary">Update Survey</button>
                                 </form>

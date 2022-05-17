@@ -7,6 +7,8 @@
     <meta content="@yield('keywords')" name="keywords">
     <meta content="@yield('description')" name="description">
 
+
+
     <!-- Favicon -->
     <link href="{{asset('assets')}}/img/favicon.ico" rel="icon">
 

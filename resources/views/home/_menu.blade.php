@@ -11,26 +11,22 @@
                             <a class="nav-link" href="#"><i class="fa fa-home"></i>Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Best Selling</a>
+                            <a class="nav-link" href="{{route('aboutus')}}"><i class="fa fa-microchip"></i>About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('contact')}}"><i class="fa fa-microchip"></i>Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>New Arrivals</a>
+                            <a class="nav-link" href="{{route('faq')}}"><i class="fa fa-microchip"></i>FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-female"></i>Fashion & Beauty</a>
+                            <a class="nav-link" href="{{route('references')}}"><i class="fa fa-microchip"></i>References</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-child"></i>Kids & Babies Clothes</a>
+                            <a class="nav-link" href="/admin"><i class="fa fa-microchip"></i>Admin</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-tshirt"></i>Men & Women Clothes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-mobile-alt"></i>Gadgets & Accessories</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-microchip"></i>Electronics & Accessories</a>
-                        </li>
+
                     </ul>
                 </nav>
             </div>
