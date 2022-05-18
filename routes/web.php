@@ -32,6 +32,7 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 
+
 Route::middleware('auth')->prefix('admin')->group(function (){
 
 //admin
@@ -72,6 +73,21 @@ Route::middleware('auth')->prefix('admin')->group(function (){
     Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
 
 });
+
+
+##### user profile
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
+});
+
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
+    Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
+});
+
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

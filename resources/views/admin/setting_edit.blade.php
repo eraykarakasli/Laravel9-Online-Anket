@@ -19,9 +19,9 @@
 
 
 <!-- setting edit -->
-<div class="container-fluid w-100 p-3 bg-light" >
-    <div class="row w-100 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0" >
-        <div class="col-md-8 text-left" style="height: 1000px">
+<div class="container-fluid  p-3 bg-light" >
+    <div class="row w-1500 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0" >
+        <div class="col-md-8 text-left" style="height: 1650px">
 
             <h2 class="card-title fw-bold">Edit Setting</h2>
 
@@ -35,7 +35,8 @@
 
 
             </ul>
-
+            <form role="form" action="{{route('admin_setting_update')}}" method="post" enctype="multipart/form-data">
+                @csrf
             <div class="tab-content">
                 <div class="tab-pane active" id="general">
                     <div class="mb-3">
@@ -55,8 +56,8 @@
                         <input type="text" name="company" value="{{$data->company}}" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label>Address</label>
-                        <input type="text" name="address" value="{{$data->address}}" class="form-control">
+                        <label>Adress</label>
+                        <input type="text" name="adress" value="{{$data->adress}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label>Phone</label>
@@ -145,9 +146,8 @@
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <form role="form" action="{{route('admin_setting_update')}}" method="post"
-                                      enctype="multipart/form-data">
-                                    @csrf
+
+
                                     <input type="hidden" id="id" name="id" value="{{$data->id}}" class="form-control">
 
                                     <script>
@@ -182,4 +182,4 @@
         <script src="{{asset('assets')}}/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
         <!-- Template Javascript -->
         <script src="{{asset('assets')}}/admin/js/main.js"></script>
-    </div>
+

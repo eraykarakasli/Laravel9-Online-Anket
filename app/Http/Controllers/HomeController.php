@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
-use App\Models\Place;
+
 use App\Models\Review;
 use App\Models\Setting;
 use App\Models\Survey;

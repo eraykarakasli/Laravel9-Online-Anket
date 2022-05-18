@@ -1,7 +1,7 @@
 <!-- Footer Start -->
 <!-- Footer -->
 <footer class="bg-primary  py-4 text-right">
-    <div class="container text-white">
+    <div class="container-fluid text-white">
         <div class="row">
             <div class="col-md-3"> © 2022 Copyright</div>
             <div class="col-md-3"> </div>
@@ -10,7 +10,8 @@
 
         </div>
         <div class="row text-center ">
-           <div class="col-md-12">Designed By: <a class="text-dark" href="https://github.com/eraycode01"> Eraycode01</a>
+           <div class="col-md-12">  Designed By:
+               <a class="text-dark" href="https://github.com/eraycode01"> Eraycode01</a>
 
              </div>
         </div>

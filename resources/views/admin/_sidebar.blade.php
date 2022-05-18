@@ -6,7 +6,7 @@
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
-                <img class="rounded-circle" src="{{asset('assets')}}/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+
                 <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
             </div>
             <div class="ms-3">
@@ -22,11 +22,11 @@
 
 
             <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Settings</a>
-            <a href="{{route('admin_setting')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Boş</a>
+            <a href="{{route('home')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Web Page</a>
 
             @auth
 
-            <a href="{{route('admin_logout')}}" class="nav-item nav-link" ><i class="far fa-file-alt me-2"></i>Logout</a>
+            <a href="{{route('logout')}}" class="nav-item nav-link" ><i class="far fa-file-alt me-2"></i>Logout</a>
             @endauth
         </div>
     </nav>

@@ -9,6 +9,7 @@
                 <ul class="category-list ">
                     @foreach($parentCategories as $rs)
                 </ul>
+                <br>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul>
