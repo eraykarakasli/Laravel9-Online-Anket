@@ -59,6 +59,18 @@ class HomeController extends Controller
         return view('home.contact',['setting'=>$setting]);
     }
 
+    public function sendmessage(Request $request){
+        $data= new Message();
+        $data -> name = $request->input('name');
+        $data -> email = $request->input('email');
+        $data -> phone = $request->input('phone');
+        $data -> subject = $request->input('subject');
+        $data -> message = $request->input('message');
+        $data -> save();
+        return redirect()->route('contact')->with('success','Mesajınız Kaydedilmiştir, Teşekkürler.');
+
+    }
+
     public function login()
     {
         return view('admin.login');

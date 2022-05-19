@@ -40,7 +40,29 @@
             </span>
             <span class="col-xl-4">
                  <h3> İletişim Formu</h3>
-            iletişim formu
+                @include('home.message')
+            <form method="post" action="{{route('sendmessage')}}">
+                @csrf
+
+                                 <div class="form-group">
+                                     <input type="text" class="form-control" name="name" placeholder="Name & Surname" />
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="phone" placeholder="Phone" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" name="email" placeholder="Your Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="6" name="message" placeholder="Message"></textarea>
+                                </div>
+                                <div><button class="btn" type="submit">Send Message</button></div>
+            </form>
             </span>
         </div>
     </div>
