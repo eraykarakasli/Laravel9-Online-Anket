@@ -1,7 +1,7 @@
 
 
 <!-- Main Slider Start -->
-<div class="header">
+<div class="header bg-light">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -30,32 +30,23 @@
                     </ul>
                 </nav>
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-4" style="height: 400px;">
+
                 <div class="header-slider normal-slider">
+                    @foreach($slider as $rs)
                     <div class="header-slider-item">
-                        <img src="{{asset('assets')}}/img/slider-1.jpg" alt="Slider Image" />
+                        <img src="{{Storage::url($rs->image)}}" style="height: 400px; width: 650px;" alt="Slider Image" />
                         <div class="header-slider-caption">
-                            <p>Görseli açıklayan metin</p>
-                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
+                            <p>{{$rs->title}}</p>
+                            <a class="btn" href="{{route('survey',['id'=>$rs->id,'slug'=>$rs->slug])}}"><i class=""></i>Make a Survey</a>
                         </div>
                     </div>
-                    <div class="header-slider-item">
-                        <img src="{{asset('assets')}}/img/slider-2.jpg" alt="Slider Image" />
-                        <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
-                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="header-slider-item">
-                        <img src="{{asset('assets')}}/img/slider-3.jpg" alt="Slider Image" />
-                        <div class="header-slider-caption">
-                            <p>Some text goes here that describes the image</p>
-                            <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Shop Now</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="col-md-3">
+
+            <div class="col-md-5">
                 <div class="header-img">
                     <div class="img-item">
                         <img src="{{asset('assets')}}/img/category-1.jpg" />

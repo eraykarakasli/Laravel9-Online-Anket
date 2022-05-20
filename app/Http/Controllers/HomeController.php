@@ -30,12 +30,20 @@ class HomeController extends Controller
 
     public function index(){
         $setting =Setting::first();
+        $slider= Survey::select('id','title','image','slug')->limit(6)->get();
 
 
         $data = [
-            'setting'=>$setting
+            'setting'=>$setting,
+            'slider'=>$slider,
+
         ];
         return view('home.index',$data);
+    }
+    public function survey($id){
+        $data=Survey::find($id);
+        print_r($data);
+        exit();
     }
 
     public function aboutus(){

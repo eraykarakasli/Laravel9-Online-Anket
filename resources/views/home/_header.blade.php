@@ -2,17 +2,17 @@
 
 
 <!-- Bottom Bar Start -->
-<div class="bottom-bar">
+<div class="bottom-bar bg-light">
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="logo">
                     <a href="/">
                         <img src="{{asset('assets')}}/img/logo.png" alt="Logo">
                     </a>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="search">
                     <input type="text" placeholder="Search">
                     <button><i class="fa fa-search"></i></button>

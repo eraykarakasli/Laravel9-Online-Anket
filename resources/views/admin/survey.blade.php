@@ -35,7 +35,6 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($datalist as $rs)
-                                        <tr class="table-info">
                                             <td> {{$rs->id}}</td>
                                             <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title )}}</td>
                                             <td>{{$rs->title}}</td>
@@ -60,16 +59,14 @@
                                             <td>
                                                 <a href="{{route('admin_survey_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete !! are you sure?')" >Delete</a>
                                             </td>
+
                                         </tr>
-                                    @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
-                <!-- Table End -->
-
-
+                    </div>
             </div>
         </div>
     </div>
@@ -87,3 +84,4 @@
 <script src="{{asset('assets')}}/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Template Javascript -->
 <script src="{{asset('assets')}}/admin/js/main.js"></script>
+

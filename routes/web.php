@@ -32,6 +32,8 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/survey/{id}/{slug}', [HomeController::class, 'survey'])->name('survey');
+
 
 Route::middleware('auth')->prefix('admin')->group(function (){
 

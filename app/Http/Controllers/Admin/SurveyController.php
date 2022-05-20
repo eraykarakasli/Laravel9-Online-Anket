@@ -75,9 +75,8 @@ class SurveyController extends Controller
      */
     public function edit(Survey $survey,$id)
     {
-        $data = Survey::find($id);
+        $data=Category::find($id);
         $datalist = Category::with('children')->get();
-
         return view('admin.survey_edit',['data'=>$data,'datalist'=>$datalist]);
     }
 

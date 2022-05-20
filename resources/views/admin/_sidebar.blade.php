@@ -1,8 +1,9 @@
 <!-- Sidebar Start -->
-<div class="sidebar col-2 "  style="height: 750px;">
+<div class="sidebar col-4"  >
     <nav class="navbar bg-light navbar-light">
         <a href="{{ route('adminhome') }}" class="navbar-brand mx-4 mb-4">
-            <h3 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i></h3>OnlineSurvey Admin
+            <h4 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i>OnlineSurvey Admin
+            </h4>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
             <div class="position-relative">
@@ -10,7 +11,7 @@
                 <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
             </div>
             <div class="ms-3">
-                <h4 class="mb-0">{{\Illuminate\Support\Facades\Auth::user()->name }}</h4>
+                <h6 class="mb-0">{{\Illuminate\Support\Facades\Auth::user()->name }}</h6>
                 <span>Admin</span>
             </div>
         </div>

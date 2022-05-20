@@ -19,7 +19,7 @@
 
 
 <!-- setting edit -->
-<div class="container-fluid  p-3 bg-light" >
+<div class="container-fluid  p-3 bg-light col-9" >
     <div class="row w-1500 p-3 ms-4 bg-light rounded align-items-center justify-content-center mx-0" >
         <div class="col-md-8 text-left" style="height: 1650px">
 
