@@ -8,7 +8,7 @@
             </ul>
             <hr>
      @else
-        <li><a href="#" class="nav-link">{{$subcategory->title}}</a> </li>
+        <li><a href="{{route('categorysurveys',['id'=>$subcategory->id, 'slug'=>$subcategory->title])}}" class="nav-link">{{$subcategory->title}}</a> </li>
      @endif
 
 @endforeach

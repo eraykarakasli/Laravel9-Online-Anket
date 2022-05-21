@@ -1,4 +1,3 @@
-
 @extends('layouts.home')
 
 @section('title', 'User Profile')
@@ -34,7 +33,7 @@
         <span class="col-sm-3">
         @include('home.usermenu')
         </span>
-        <span class="col-xl-9">
+            <span class="col-xl-9">
 
 
         @include('profile.show')

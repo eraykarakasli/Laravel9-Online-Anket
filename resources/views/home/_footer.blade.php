@@ -23,14 +23,14 @@
                                 <a href="{{$setting->twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
                             @endif
                             @if($setting->facebook !=null)
-                                    <a href="{{$setting->facebook}}target="_blank""><i class="fab fa-facebook-f"></i></a>
+                                    <a href="{{$setting->facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             @endif
-                                <a href="www.linkedin.com"target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             @if($setting->instagram !=null)
-                                    <a href="{{$setting->instagram}}target="_blank""><i class="fab fa-instagram"></i></a>
+                                    <a href="{{$setting->instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
                                 @endif
                             @if($setting->youtube !=null)
-                                    <a href="{{$setting->youtube}}target="_blank""><i class="fab fa-youtube"></i></a>
+                                    <a href="{{$setting->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a>
                                 @endif
 
                         </div>
@@ -42,9 +42,9 @@
                 <div class="footer-widget">
                     <h2>Company Info</h2>
                     <ul>
-                        <li><a href="{{$setting->aboutus}}">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                        <li><a href="{{route('references')}}">References</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>

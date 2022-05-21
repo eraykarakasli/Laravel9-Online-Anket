@@ -30,12 +30,6 @@
                 </ul>
             </div>
         </li>
-
-
-        <li class="nav-item navbar-dark">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-
     </ul>
 </div>
 

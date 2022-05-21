@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 
 @section('title', 'Category List')
-
-
-
 @section('content')
 
     <!-- category blade -->
@@ -33,16 +30,17 @@
                                     </thead>
                                     <tbody>
                                     @foreach ($datalist as $rs)
-
+                                        <tr class="table-info">
                                             <td> {{$rs->id}}</td>
 
-                                            <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title)}}</td>
+                                            <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
+
 
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td><a href="{{route('admin_category_edit', ['id'=>$rs->id])}}">Edit</a> </td>
                                             <td><a href="{{route('admin_category_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete !! are you sure?')" >Delete</a></td>
-                                    </tr>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -50,7 +48,7 @@
                         </div>
                     </div>
                 <!-- Table End -->
-                    </div>
+
             </div>
             </div>
         </div>

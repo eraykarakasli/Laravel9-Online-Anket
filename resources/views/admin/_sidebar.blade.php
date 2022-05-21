@@ -1,5 +1,5 @@
 <!-- Sidebar Start -->
-<div class="sidebar col-4"  >
+<div class="sidebar col-4" >
     <nav class="navbar bg-light navbar-light">
         <a href="{{ route('adminhome') }}" class="navbar-brand mx-4 mb-4">
             <h4 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i>OnlineSurvey Admin

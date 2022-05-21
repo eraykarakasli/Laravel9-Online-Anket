@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.home')
 
-@section('title', 'About Us -'. $data->title)
+@section('title', 'Survey Detail -'. $data->title)
 @section('description')
     {{$data->description}}
 @endsection
@@ -34,7 +34,33 @@
         </span>
             <span class="col-xl-9">
 
-         İçerik kısmı
+
+  <h4 class="fw-bold text-center mt-3"></h4>
+
+  <form class=" bg-white px-4" action="">
+
+    <p class="fw-bold"><h3>{{$data->title}}</h3></p>
+      <p class="fw-bold">{!! $data->detail !!}</p>
+    <div class="form-check mb-2">
+         @foreach($datalist as $rs)
+      <input class="form-check-input" type="radio" name="exampleForm" id="radioExample1" />
+
+        <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 200px;" alt="">
+
+      <label class="form-check-label" for="radioExample1">
+       {{$rs->title}}
+      </label>
+             <br>
+        @endforeach
+    </div>
+
+  </form>
+                <br>
+
+  <div class="text-end">
+    <button type="button" class="btn btn-primary">Submit</button>
+  </div>
+
 
             </span>
         </div>

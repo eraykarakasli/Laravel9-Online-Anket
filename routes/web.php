@@ -23,6 +23,7 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/test',[HomeController::class,'test'])->name('test');
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 
@@ -33,6 +34,10 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/survey/{id}/{slug}', [HomeController::class, 'survey'])->name('survey');
+Route::get('/categorysurveys/{id}/{slug}', [HomeController::class, 'categorysurveys'])->name('categorysurveys');
+Route::post('/getsurvey', [HomeController::class, 'getsurvey'])->name('getsurvey');
+Route::get('/surveylist/{search}', [HomeController::class, 'surveylist'])->name('surveylist');
+
 
 
 Route::middleware('auth')->prefix('admin')->group(function (){

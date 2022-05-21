@@ -1,6 +1,5 @@
 
 
-
 <!-- Bottom Bar Start -->
 <div class="bottom-bar bg-light">
     <div class="container-fluid">
@@ -35,17 +34,17 @@
                         </div>
                     </div>
                 @endauth
-                         @guest
-                            <div class="user bg-light">
-                                <button type="button" class="btn" >
-                                <a href="register">Register</a> / <a href="login"> Log in</a>
-                                </button>
+                @guest
+                    <div class="user bg-light">
+                        <button type="button" class="btn" >
+                            <a href="register">Register</a> / <a href="login"> Log in</a>
+                        </button>
 
-                            </div>
-                        @endguest
+                    </div>
+                @endguest
+            </div>
         </div>
     </div>
-</div>
-<!-- Bottom Bar End -->
+    <!-- Bottom Bar End -->
 
 </div>

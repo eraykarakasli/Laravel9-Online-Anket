@@ -29,7 +29,7 @@
 
                     <div class="product-item">
 
-                        <div class="product-title">
+                        <div class="product-title" style="height: 100px;">
                             <a href="#">{{$rs->title}}</a>
                             <div class="ratting">
                                 <i class="fa fa-star"></i>
@@ -39,7 +39,7 @@
                                 <i class="fa fa-star"></i>
                             </div>
                         </div>
-                        <div class="product-image" >
+                        <div class="product-image " >
                             <a href="#">
                                <img src="{{Storage::url($rs->image)}}" style="height: 300px; width: 500px;" alt="Product Image">
                             </a>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="product-price" style="height: 80px;">
 
-                            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Make a Survey</a>
+                            <a class="btn" href="{{route('survey',['id'=>$rs->id,'slug'=>$rs->slug])}}"></i>Make a Survey</a>
                         </div>
                     </div>
                 </div>

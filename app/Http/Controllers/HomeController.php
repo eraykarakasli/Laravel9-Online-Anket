@@ -40,10 +40,17 @@ class HomeController extends Controller
         ];
         return view('home.index',$data);
     }
-    public function survey($id){
+    public function survey($id,$slug){
         $data=Survey::find($id);
-        print_r($data);
-        exit();
+        $datalist = Image::where('survey_id',$id)->get();
+       return view('home.survey_detail', ['data'=>$data, 'datalist'=>$datalist]);
+    }
+    public function categorysurveys($id,$slug){
+        $datalist=Survey::where('category_id',$id)->get();
+        $data=Category::find($id);
+      // print_r($data);
+        //exit();
+        return view('home.category_surveys', ['datalist'=>$datalist,'data'=>$data]);
     }
 
     public function aboutus(){
@@ -61,6 +68,25 @@ class HomeController extends Controller
         return view('home.faq',['datalist'=>$datalist]);
     }
 
+    public function getsurvey(Request $request)
+    {
+        $search=$request->input('search');
+
+        $count=$data =Survey::where('title','like','%'.$search.'%')->get()->count();
+        if ($count==1){
+            $data =Survey::where('title', 'like','%'.$search.'%')->first();
+            return redirect()->route('survey',['id'=>$data->id]);
+        }
+        else{
+            return redirect()->route('surveylist',['search'=>$search]);
+        }
+    }
+    public function surveylist($search)
+    {
+        $datalist =Survey::where('title', 'like','%'.$search.'%')->get();
+        return view('home.search_surveys',['search'=>$search,'datalist'=>$datalist]);
+
+    }
 
     public function contact(){
         $setting =Setting::first();

@@ -32,9 +32,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
         $datalist = Category::with('children')->get();
-       // print_r($datalist);
+       //print_r($datalist);
         //exit();
         return view('admin.category', ['datalist' => $datalist]);
 
