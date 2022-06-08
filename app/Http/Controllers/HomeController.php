@@ -23,6 +23,17 @@ class HomeController extends Controller
         return Setting::first();
     }
 
+    public static function countreview($id)
+    {
+        return Review::where('survey_id', $id)->count();
+    }
+    public static function avrgreview($id)
+    {
+        return Review::where('survey_id', $id)->average('rate');
+    }
+
+
+
     public static function categorylist()
     {
         return Category::where('parent_id','=', 0)->with('children')->get();
@@ -40,11 +51,14 @@ class HomeController extends Controller
         ];
         return view('home.index',$data);
     }
+
     public function survey($id,$slug){
         $data=Survey::find($id);
         $datalist = Image::where('survey_id',$id)->get();
-       return view('home.survey_detail', ['data'=>$data, 'datalist'=>$datalist]);
+        $reviews = Review::where('survey_id',$id)->get();
+       return view('home.survey_detail', ['data'=>$data, 'datalist'=>$datalist,'reviews'=>$reviews]);
     }
+
     public function categorysurveys($id,$slug){
         $datalist=Survey::where('category_id',$id)->get();
         $data=Category::find($id);

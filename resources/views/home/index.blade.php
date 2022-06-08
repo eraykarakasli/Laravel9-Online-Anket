@@ -1,6 +1,10 @@
 @php
     $setting= \App\Http\Controllers\HomeController::getsetting()
 @endphp
+@php
+    $avgrev=\App\Http\Controllers\HomeController::avrgreview($data->id);
+    $countreview=\App\Http\Controllers\HomeController::countreview($data->id);
+@endphp
 @extends('layouts.home')
 
 @section('title', $setting->title)
@@ -32,11 +36,11 @@
                         <div class="product-title" style="height: 100px;">
                             <a href="#">{{$rs->title}}</a>
                             <div class="ratting">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star" @if($rs->rate<1) -o empty @endif></i>
+                                <i class="fa fa-star"  @if($rs->rate<2) -o empty @endif ></i>
+                                <i class="fa fa-star"  @if($rs->rate<3) -o empty @endif></i>
+                                <i class="fa fa-star"  @if($rs->rate<4) -o empty @endif ></i>
+                                <i class="fa fa-star"  @if($rs->rate<5) -o empty @endif></i>
                             </div>
                         </div>
                         <div class="product-image " >

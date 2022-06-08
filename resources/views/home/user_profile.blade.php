@@ -1,3 +1,7 @@
+@php
+    $setting= \App\Http\Controllers\HomeController::getsetting()
+@endphp
+
 @extends('layouts.home')
 
 @section('title', 'User Profile')
@@ -9,7 +13,9 @@
 
 
 @section('content')
+
     @include('home._category')
+
     @include('home._slider')
 
 

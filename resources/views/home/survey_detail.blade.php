@@ -14,7 +14,10 @@
 @section('content')
     @include('home._category')
     @include('home._slider')
-
+    @php
+        $avgrev=\App\Http\Controllers\HomeController::avrgreview($data->id);
+        $countreview=\App\Http\Controllers\HomeController::countreview($data->id);
+    @endphp
 
     <div class="breadcrumb-wrap col-md-2">
         <div class="container-fluid">
@@ -25,7 +28,7 @@
             </ul>
         </div>
     </div>
-    <div class="header col-12">
+
 
         <div class="row">
 
@@ -60,12 +63,54 @@
   <div class="text-end">
     <button type="button" class="btn btn-primary">Submit</button>
   </div>
-
-
             </span>
+            <br>
+            <br>
+
         </div>
     </div>
 
+<div class="container">
+
+
+
+
+
+    @livewire('review',['id' => $data->id])
+    <div class="ratting">
+        <h5>Average Rating :</h5>
+        <i class="fa fa-star" @if($avgrev<1) -o empty @endif></i>
+        <i class="fa fa-star" @if($avgrev<2) -o empty @endif></i>
+        <i class="fa fa-star" @if($avgrev<3) -o empty @endif></i>
+        <i class="fa fa-star" @if($avgrev<4) -o empty @endif></i>
+        <i class="fa fa-star" @if($avgrev<5) -o empty @endif></i>
+    </div>
+    <br>
+    <br>
+        <a class="nav-link active" data-toggle="pill" href="#reviews">Reviews {{$countreview}}</a>
+
+                                <div id="reviews" class="container tab-pane fade active show">
+                                    <div class="reviews-submitted" >
+                                        @foreach($reviews as $rs)
+                                            <div class="reviewer">{{$rs->user->name}} - <span>{{$rs->created_at}}</span></div>
+                                            <div class="ratting">
+                                            <i class="fa fa-star" @if($rs->rate<1) -o empty @endif></i>
+                                            <i class="fa fa-star"  @if($rs->rate<2) -o empty @endif ></i>
+                                            <i class="fa fa-star"  @if($rs->rate<3) -o empty @endif></i>
+                                            <i class="fa fa-star"  @if($rs->rate<4) -o empty @endif ></i>
+                                            <i class="fa fa-star"  @if($rs->rate<5) -o empty @endif></i>
+                                            <i>{{$rs->rate}}</i>
+                                        </div>
+                                            <div class="review-body">
+                                                <strong>{{$rs->subject}}</strong>
+                                                <p>{{$rs->review}}</p>
+                                            </div>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+
+    </div>
 
 
 @endsection

@@ -13,8 +13,14 @@
             </div>
             <div class="col-md-4">
                 <div class="search">
-                    <input type="text" placeholder="Search">
-                    <button><i class="fa fa-search"></i></button>
+                    <form action="{{route('getsurvey')}}" method="post">
+                        @csrf
+                        @livewire('search')
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    @section('javascript')
+                        @livewireScripts
+                    @endsection
                 </div>
             </div>
 
