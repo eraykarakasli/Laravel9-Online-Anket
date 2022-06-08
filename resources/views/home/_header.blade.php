@@ -34,7 +34,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('myprofile')}}">Profile</a>
 
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="{{route('myreviews')}}">My Reviews</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                         </div>

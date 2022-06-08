@@ -2,8 +2,9 @@
     $setting= \App\Http\Controllers\HomeController::getsetting()
 @endphp
 @php
-    $avgrev=\App\Http\Controllers\HomeController::avrgreview($data->id);
+
     $countreview=\App\Http\Controllers\HomeController::countreview($data->id);
+$avgrev=\App\Http\Controllers\HomeController::avrgreview($data->id);
 @endphp
 @extends('layouts.home')
 
@@ -36,11 +37,12 @@
                         <div class="product-title" style="height: 100px;">
                             <a href="#">{{$rs->title}}</a>
                             <div class="ratting">
-                                <i class="fa fa-star" @if($rs->rate<1) -o empty @endif></i>
-                                <i class="fa fa-star"  @if($rs->rate<2) -o empty @endif ></i>
-                                <i class="fa fa-star"  @if($rs->rate<3) -o empty @endif></i>
-                                <i class="fa fa-star"  @if($rs->rate<4) -o empty @endif ></i>
-                                <i class="fa fa-star"  @if($rs->rate<5) -o empty @endif></i>
+                                <i class="fa fa-star" @if($avgrev<1) -o empty @endif></i>
+                                <i class="fa fa-star" @if($avgrev<2) -o empty @endif></i>
+                                <i class="fa fa-star" @if($avgrev<3) -o empty @endif></i>
+                                <i class="fa fa-star" @if($avgrev<4) -o empty @endif></i>
+                                <i class="fa fa-star" @if($avgrev<5) -o empty @endif></i>
+                                <i type="number" step="0.1">{{$avgrev}}</i>
                             </div>
                         </div>
                         <div class="product-image " >

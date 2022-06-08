@@ -87,9 +87,10 @@ class HomeController extends Controller
         $search=$request->input('search');
 
         $count=$data =Survey::where('title','like','%'.$search.'%')->get()->count();
-        if ($count==1){
+        if ($count==1)
+        {
             $data =Survey::where('title', 'like','%'.$search.'%')->first();
-            return redirect()->route('survey',['id'=>$data->id]);
+            return redirect()->route('survey',['id'=>$data->id,'slug'=>$data->slug]);
         }
         else{
             return redirect()->route('surveylist',['search'=>$search]);

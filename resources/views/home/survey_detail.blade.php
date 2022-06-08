@@ -1,5 +1,7 @@
 @php
-    $setting= \App\Http\Controllers\HomeController::getsetting()
+    $setting= \App\Http\Controllers\HomeController::getsetting();
+    $countreview= \App\Http\Controllers\HomeController::countreview($data->id);
+    $avgrev= \App\Http\Controllers\HomeController::avrgreview($data->id);
 @endphp
 @extends('layouts.home')
 
@@ -14,10 +16,7 @@
 @section('content')
     @include('home._category')
     @include('home._slider')
-    @php
-        $avgrev=\App\Http\Controllers\HomeController::avrgreview($data->id);
-        $countreview=\App\Http\Controllers\HomeController::countreview($data->id);
-    @endphp
+
 
     <div class="breadcrumb-wrap col-md-2">
         <div class="container-fluid">
@@ -77,13 +76,14 @@
 
 
     @livewire('review',['id' => $data->id])
-    <div class="ratting">
+    <div  id="rateMe2"  class="empty-stars">
         <h5>Average Rating :</h5>
         <i class="fa fa-star" @if($avgrev<1) -o empty @endif></i>
         <i class="fa fa-star" @if($avgrev<2) -o empty @endif></i>
         <i class="fa fa-star" @if($avgrev<3) -o empty @endif></i>
         <i class="fa fa-star" @if($avgrev<4) -o empty @endif></i>
         <i class="fa fa-star" @if($avgrev<5) -o empty @endif></i>
+        <i>{{$avgrev}}</i>
     </div>
     <br>
     <br>
@@ -93,10 +93,10 @@
                                     <div class="reviews-submitted" >
                                         @foreach($reviews as $rs)
                                             <div class="reviewer">{{$rs->user->name}} - <span>{{$rs->created_at}}</span></div>
-                                            <div class="ratting">
+                                            <div class="rating">
                                             <i class="fa fa-star" @if($rs->rate<1) -o empty @endif></i>
                                             <i class="fa fa-star"  @if($rs->rate<2) -o empty @endif ></i>
-                                            <i class="fa fa-star"  @if($rs->rate<3) -o empty @endif></i>
+                                            <i class="fa fa-star"  @if($rs->rate<3) aria-hidden="true" @endif></i>
                                             <i class="fa fa-star"  @if($rs->rate<4) -o empty @endif ></i>
                                             <i class="fa fa-star"  @if($rs->rate<5) -o empty @endif></i>
                                             <i>{{$rs->rate}}</i>
@@ -124,3 +124,4 @@
 
 <!-- Template Javascript -->
 <script src="js/main.js"></script>
+<script src="js/addons/rating.js"></script>
