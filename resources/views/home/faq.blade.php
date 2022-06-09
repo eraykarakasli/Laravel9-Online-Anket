@@ -3,18 +3,27 @@
 @endphp
 @extends('layouts.home')
 
-@section('title', 'Survey Detail -'. $data->title)
+@section('title', 'Fag -'. $setting->title)
 @section('description')
-    {{$data->description}}
+    {{$setting->description}}
 @endsection
-
-@section('keyword',$data->keyword)
+@section('headerjs')
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#accordion" ).accordion();
+        } );
+    </script>
+@endsection
+@section('keyword',$setting->keyword)
 
 
 @section('content')
     @include('home._category')
     @include('home._slider')
-
 
     <div class="breadcrumb-wrap col-md-2">
         <div class="container-fluid">
@@ -32,10 +41,17 @@
         <span class="col-sm-3">
         @include('home.usermenu')
         </span>
+
             <span class="col-xl-9">
+         <div id="accordion">
+                @foreach($datalist as $rs)
 
-         İçerik kısmı
-
+               <h2> {{$rs->question}}</h2>
+           <div>
+              <p>  {!! $rs->answer !!}</p>
+            </div>
+            @endforeach
+        </div>
             </span>
         </div>
     </div>

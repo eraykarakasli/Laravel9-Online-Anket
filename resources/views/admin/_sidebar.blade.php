@@ -2,7 +2,7 @@
 <div class="sidebar col-4" >
     <nav class="navbar bg-light navbar-light">
         <a href="{{ route('adminhome') }}" class="navbar-brand mx-4 mb-4">
-            <h4 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i>OnlineSurvey Admin
+            <h4 class="text-primary font-weight-bold"><i class="fa fa-hashtag me-2"></i>OnlineSurvey <br>  <p class="text-lg-center">Admin</p>
             </h4>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
@@ -26,6 +26,7 @@
             <a href="{{route('home')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Web Page</a>
             <a href="{{route('admin_message')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Messages</a>
             <a href="{{route('admin_review')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Reviews</a>
+            <a href="{{route('admin_faq')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Faq</a>
             @auth
 
             <a href="{{route('logout')}}" class="nav-item nav-link" ><i class="far fa-file-alt me-2"></i>Logout</a>

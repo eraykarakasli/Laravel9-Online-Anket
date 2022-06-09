@@ -1,23 +1,38 @@
-@extends('layouts.admin')
+@php
+    $setting= \App\Http\Controllers\HomeController::getsetting()
+@endphp
+@extends('layouts.home')
 
-@section('title', 'Add Survey')
+@section('title', 'Surveys Add -'. $setting->title)
+@section('description')
+    {{$setting->description}}
+@endsection
 
+@section('keyword',$setting->keyword)
 
 
 @section('content')
-@section('javascript')
-    <!-- include summernote css/js -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-    @endsection
+    @include('home._category')
+    @include('home._slider')
 
-    <!-- Blank Start -->
-    <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
-                <h3>Add Survey</h3>
+    <div class="breadcrumb-wrap col-md-2">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('user_surveys')}}">My Surveys</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="header col-12">
+
+        <div class="row">
+
+        <span class="col-sm-3">
+        @include('home.usermenu')
+        </span>
+            <span class="col-xl-9">
+ <h3>Add Survey</h3>
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
@@ -84,19 +99,31 @@
                         </div>
                     </div>
             </div>
+    </div>
+
+            </span>
         </div>
     </div>
-    <!-- Blank End -->
+
+
+
 @endsection
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
 <!-- JavaScript Libraries -->
-<script src="{{asset('assets')}}/admin/code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="{{asset('assets')}}/admin/cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/chart/chart.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/easing/easing.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/waypoints/waypoints.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/moment-timezone.min.js"></script>
-<script src="{{asset('assets')}}/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/slick/slick.min.js"></script>
+
 <!-- Template Javascript -->
-<script src="{{asset('assets')}}/admin/js/main.js"></script>
+<script src="js/main.js"></script>
+@section('javascript')
+    <!-- include summernote css/js -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+@endsection
+

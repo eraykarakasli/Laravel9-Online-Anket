@@ -15,7 +15,6 @@
     @include('home._category')
     @include('home._slider')
 
-
     <div class="breadcrumb-wrap col-md-2">
         <div class="container-fluid">
             <ul class="breadcrumb">
@@ -65,7 +64,7 @@
                                     @foreach($datalist as $rs)
                                         <tr class="table-info">
                                             <td>{{$rs->id}}</td>
-                                            <td>{{$rs->data->title}}</td>
+                                            <td><a href="{{route('survey',['id'=>$rs->survey->id,'slug'=>$rs->survey->slug])}}" target="_blank">{{$rs->survey->title}}</a></td>
                                             <td>{{$rs->subject}}</td>
                                             <td>{{$rs->review}}</td>
                                             <td>{{$rs->rate}}</td>

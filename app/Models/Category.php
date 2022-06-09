@@ -13,7 +13,7 @@ class Category extends Model
         'parent'
         ];
     #one to many
-    public function surveys()
+    public function survey()
     {
         return $this->hasMany(Survey::class);
     }

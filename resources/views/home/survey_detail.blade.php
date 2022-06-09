@@ -5,18 +5,17 @@
 @endphp
 @extends('layouts.home')
 
-@section('title', 'Survey Detail -'. $data->title)
+@section('title', 'Survey Detail -'. $setting->title)
 @section('description')
-    {{$data->description}}
+    {{$setting->description}}
 @endsection
 
-@section('keyword',$data->keyword)
+@section('keyword',$setting->keyword)
 
 
 @section('content')
     @include('home._category')
     @include('home._slider')
-
 
     <div class="breadcrumb-wrap col-md-2">
         <div class="container-fluid">

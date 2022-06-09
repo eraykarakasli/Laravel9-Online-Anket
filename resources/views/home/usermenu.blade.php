@@ -14,10 +14,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('contact')}}"><i class="fa fa-microchip"></i>My Surveys</a>
+                        <a class="nav-link" href="{{route('user_surveys')}}"><i class="fa fa-microchip"></i>My Surveys</a>
                     </li>
+
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('references')}}"><i class="fa fa-microchip"></i>Messages</a>
+                        <a class="nav-link" href="{{route('myreviews')}}"><i class="fa fa-microchip"></i>My Review</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout')}}"><i class="fa fa-microchip"></i>Log Out</a>

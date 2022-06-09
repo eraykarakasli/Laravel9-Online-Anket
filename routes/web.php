@@ -6,6 +6,8 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
 }
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +42,19 @@ Route::get('/surveylist/{search}', [HomeController::class, 'surveylist'])->name(
 
 
 
+
 Route::middleware('auth')->prefix('admin')->group(function (){
+
+    #FAQ
+    Route::prefix('faq')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\FaqController::class, 'index'])->name('admin_faq');
+        Route::get('create', [\App\Http\Controllers\Admin\FaqController::class, 'create'])->name('admin_faq_create');
+        Route::post('store', [\App\Http\Controllers\Admin\FaqController::class, 'store'])->name('admin_faq_store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'edit'])->name('admin_faq_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'update'])->name('admin_faq_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
+    });
 
 //admin
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome');
@@ -96,6 +110,7 @@ Route::prefix('review')->group(function () {
     Route::get('show/{id}', [\App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
 });
 
+
 ##### user profile
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function (){
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('myprofile');
@@ -104,9 +119,27 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 });
 
-//Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
   //  Route::get('/profile', [\App\Http\Controllers\UserController::class, 'index'])->name('userprofile');
-//});
+
+    #USER SURVEYS
+    Route::prefix('survey')->group(function () {
+        Route::get('/', [SurveyController::class, 'index'])->name('user_surveys');
+        Route::get('/create', [SurveyController::class, 'create'])->name('user_survey_create');
+        Route::post('store', [SurveyController::class, 'store'])->name('user_survey_store');
+        Route::get('/edit/{id}', [SurveyController::class, 'edit'])->name('user_survey_edit');
+        Route::post('update/{id}', [SurveyController::class, 'update'])->name('user_survey_update');
+        Route::get('delete/{id}', [SurveyController::class, 'destroy'])->name('user_survey_delete');
+        Route::get('show', [SurveyController::class, 'show'])->name('user_survey_show');
+    });
+    #Survey Image Gallery
+    Route::prefix('image')->group(function () {
+
+        Route::get('create/{survey_id}', [ImageController::class, 'create'])->name('user_image_create');
+        Route::post('store/{survey_id}', [ImageController::class, 'store'])->name('user_image_store');
+        Route::get('delete/{id}/{survey_id}', [ImageController::class, 'destroy'])->name('user_image_delete');
+    });
+});
 
 
 
