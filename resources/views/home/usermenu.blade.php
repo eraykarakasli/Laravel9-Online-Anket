@@ -17,6 +17,9 @@
                         <a class="nav-link" href="{{route('user_surveys')}}"><i class="fa fa-microchip"></i>My Surveys</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('user_attendance')}}"><i class="fa fa-microchip"></i>My Attendance</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('myreviews')}}"><i class="fa fa-microchip"></i>My Review</a>

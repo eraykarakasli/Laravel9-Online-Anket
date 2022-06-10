@@ -9,6 +9,9 @@
 @endsection
 
 @section('keyword',$setting->keyword)
+@section('javascript')
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+@endsection
 
 
 @section('content')
@@ -43,9 +46,9 @@
 
                                         <label >Category</label>
 
-                                        <select class="form-control select2 " size="1" name="category_id">
+                                        <select class="form-control select2 " size="1" name="parent_id">
                                             @foreach ($datalist as $rs)
-                                                <option value="{{ $rs->id}}" @if ($rs->id == $data->category_id) selected="selected" @endif >
+                                                <option value="{{ $rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >
                                                     {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
                                                 </option>
                                             @endforeach
@@ -69,16 +72,17 @@
                                         <label>Detail</label>
                                         <textarea id="summernote" type="text" name="detail">{{$data->detail}}</textarea>
                                         <script>
-                                            $(document).ready(function() {
-                                                $('#summernote').summernote();
-                                            });
+                                            CKEDITOR.replace( 'detail' );
                                         </script>
+
 
                                     </div>
                                     <div class="mb-3">
                                         <label>Image</label>
                                         <input type="file" name="image" value="{{$data->image}}"  class="form-control" >
-
+                                        @if($data->image)
+                                            <img src="{{Storage::url($data->image)}}" height="100" alt="">
+                                        @endif
 
                                     <div class="mb-3">
                                         <label>Slug</label>

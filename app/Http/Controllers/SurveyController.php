@@ -49,6 +49,7 @@ class SurveyController extends Controller
         $data -> user_id = Auth::id();
         $data -> detail = $request->input('detail');
         $data -> slug = $request->input('slug');
+        $data -> status = $request->input('status');
 
         $data -> image = Storage::putFile('images',$request->file('image'));//file upload
 
@@ -75,7 +76,7 @@ class SurveyController extends Controller
      */
     public function edit(Survey $survey,$id)
     {
-        $data=Category::find($id);
+        $data=Survey::find($id);
         $datalist = Category::with('children')->get();
         return view('home.user_survey_edit',['data'=>$data,'datalist'=>$datalist]);
     }

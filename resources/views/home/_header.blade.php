@@ -33,8 +33,10 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('myprofile')}}">Profile</a>
+                            <a class="dropdown-item" href="{{route('user_attendance')}}">My Attendance</a>
 
                             <a class="dropdown-item" href="{{route('myreviews')}}">My Reviews</a>
+                            <a class="dropdown-item" href="/admin" target="_blank">Admin Panel</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                         </div>
@@ -52,5 +54,5 @@
         </div>
     </div>
     <!-- Bottom Bar End -->
-
+    @include('home.message')
 </div>

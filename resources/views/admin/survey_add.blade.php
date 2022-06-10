@@ -16,13 +16,14 @@
 
     <!-- Blank Start -->
     <div class="container-fluid pt-4 px-4">
-        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">            <div class="col-md-6 text-center">
+        <div class="row vh-100 ms-4 bg-light rounded align-items-center justify-content-center mx-0">
+            <div class="col-md-6 text-center">
                 <h3>Add Survey</h3>
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <form role="form" action="{{ route('user_survey_store') }}" method="post" enctype="multipart/form-data">
+                                <form role="form" action="{{ route('admin_survey_store') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-lg-4">
 
@@ -50,7 +51,7 @@
 
                                     <div class="mb-3">
                                         <label>Detail</label>
-                                        <textarea id="summernote" type="text" name="detail"></textarea>
+                                        <textarea id="summernote" type="text" name="detail" class="form-control"></textarea>
                                         <script>
                                             $(document).ready(function() {
                                                 $('#summernote').summernote();

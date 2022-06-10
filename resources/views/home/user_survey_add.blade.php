@@ -9,6 +9,9 @@
 @endsection
 
 @section('keyword',$setting->keyword)
+@section('javascript')
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+@endsection
 
 
 @section('content')
@@ -65,11 +68,9 @@
 
                                     <div class="mb-3">
                                         <label>Detail</label>
-                                        <textarea id="summernote" type="text" name="detail"></textarea>
+                                        <textarea  type="text" name="detail" ></textarea>
                                         <script>
-                                            $(document).ready(function() {
-                                                $('#summernote').summernote();
-                                            });
+                                            CKEDITOR.replace( 'detail' );
                                         </script>
 
                                     </div>

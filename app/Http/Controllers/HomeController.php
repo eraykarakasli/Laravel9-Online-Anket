@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
         return Review::where('survey_id', $id)->count();
     }
+
     public static function avrgreview($id)
     {
         return Review::where('survey_id', $id)->average('rate');

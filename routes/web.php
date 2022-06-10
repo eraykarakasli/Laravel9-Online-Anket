@@ -5,6 +5,7 @@ if(version_compare(PHP_VERSION, '7.2.0', '>=')) {
     error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 }
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\SurveyController;
@@ -138,6 +139,13 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function (){
         Route::get('create/{survey_id}', [ImageController::class, 'create'])->name('user_image_create');
         Route::post('store/{survey_id}', [ImageController::class, 'store'])->name('user_image_store');
         Route::get('delete/{id}/{survey_id}', [ImageController::class, 'destroy'])->name('user_image_delete');
+    });
+    #Attendance
+    Route::prefix('attendance')->group(function () {
+        Route::get('/', [AttendanceController::class, 'index'])->name('user_attendance');
+        Route::post('store/{id}', [AttendanceController::class, 'store'])->name('user_attendance_add');
+        Route::post('update/{id}', [AttendanceController::class, 'update'])->name('user_attendance_update');
+        Route::get('delete/{id}', [AttendanceController::class, 'destroy'])->name('user_attendance_delete');
     });
 });
 
