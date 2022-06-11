@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Attendance;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Image;
@@ -21,6 +22,10 @@ class HomeController extends Controller
     public static function getsetting()
     {
         return Setting::first();
+    }
+    public static function countattendance($id)
+    {
+        return Attendance::where('question_id', $id)->count();
     }
 
     public static function countreview($id)

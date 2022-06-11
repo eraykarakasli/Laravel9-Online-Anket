@@ -1,5 +1,6 @@
 @php
-    $setting= \App\Http\Controllers\HomeController::getsetting()
+    $setting= \App\Http\Controllers\HomeController::getsetting();
+ $countattendance= \App\Http\Controllers\HomeController::countattendance($data->id);
 @endphp
 @extends('layouts.home')
 
@@ -33,12 +34,12 @@
         </span>
             <span class="col-xl-9">
  <div class="col-md-8 text-left">
-                <h3 class="card-title">My Attendance</h3>
+                <h3 class="card-title">My Attendance </h3>
 
      <!-- Table Start -->
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
-                        <div class="col-md-12 col-xl-6">
+                        <div class="col-md-12 ">
                             <div class="bg-light rounded h-100 p-4">
 
                                 <table  class="table table-striped table-hover table-secondary">
@@ -48,10 +49,10 @@
                                         <th scope="col">Survey</th>
 
                                         <th scope="col">Answer</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">Rate</th>
                                         <th scope="col">Image</th>
 
-                                        <th scope="col">Edit</th>
+
                                         <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
@@ -61,7 +62,7 @@
                                         <td>{{$rs->survey->title}}</td>
                                         <td>{{$rs->answer}}</td>
 
-                                        <td>{{$rs->status}}</td>
+                                        <td>{{$countattendance}}</td>
                                         <td>
 
                                             @if($rs->survey->image)
@@ -69,9 +70,7 @@
                                             @endif
                                             </td>
 
-                                        <td>
-                                                <a href="{{route('user_attendance_update', ['id'=>$rs->id])}}">Edit</a>
-                                            </td>
+
                                         <td>
                                                 <a href="{{route('user_attendance_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete !! are you sure?')" >Delete</a>
                                             </td>
@@ -84,7 +83,7 @@
                         </div>
                     </div>
             </div>
-
+ </div>
             </span>
         </div>
     </div>

@@ -24,7 +24,7 @@
                             <a class="nav-link" href="{{route('references')}}"><i class="fa fa-microchip"></i>References</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin"><i class="fa fa-microchip"></i>Admin</a>
+                            <a class="nav-link" href="/myaccount"><i class="fa fa-microchip"></i>User Profile</a>
                         </li>
 
                     </ul>
@@ -47,19 +47,16 @@
             </div>
 
             <div class="col-md-5">
-                <div class="header-img">
-                    <div class="img-item">
-                        <img src="{{asset('assets')}}/img/category-1.jpg" />
-                        <a class="img-text" href="">
-                            <p>Some text goes here that describes the image</p>
+                <div class="header-img btn" >
+
+
+
+                        <img src="https://www.ufuk.edu.tr/uploads/page/fakulteler/kalite-guvence/images/survey-transparent-png.png">
+                        <a class="img-text" href="/user/survey">
+                            <p>Click to create a Survey</p>
                         </a>
-                    </div>
-                    <div class="img-item">
-                        <img src="{{asset('assets')}}/img/category-2.jpg" />
-                        <a class="img-text" href="">
-                            <p>Some text goes here that describes the image</p>
-                        </a>
-                    </div>
+
+
                 </div>
             </div>
         </div>

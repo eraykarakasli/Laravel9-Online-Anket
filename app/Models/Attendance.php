@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Attendance extends Model
 {
     use HasFactory;
+
     public function survey()
     {
         return $this->belongsTo(Survey::class);

@@ -53,28 +53,30 @@ $countreview= \App\Http\Controllers\HomeController::countreview($data->id);
     <div class="form-check mb-2">
          @foreach($datalist as $rs)
 
-      <input class="form-check-input" type="radio"  name="answer" value="{{$rs->title}}"/>
+      <input  class="form-check-input" type="radio"  name="answer" value="{{$rs->title}}"/>
         <br>
 
-            <input   type="number"  name="question_id" value="{{$rs->id}}">
+
 
         <br>
         <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 200px;" >
 
       <label class="form-check-label" for="radioExample1">
-       {{$rs->title}}
+          <div class="text-end">
+    <button type="submit" value="{{$rs->id}}" name="question_id"  class="btn btn-primary">{{$rs->title}}</button>
+  </div>
       </label>
 
              <br>
-        @endforeach
 
-    </div>
+
+
 
                 <br>
 
-  <div class="text-end">
-    <button type="submit" value="" class="btn btn-primary">Submit</button>
-  </div>
+
+@endforeach
+        </div>
 </form>
             </span>
             <br>
