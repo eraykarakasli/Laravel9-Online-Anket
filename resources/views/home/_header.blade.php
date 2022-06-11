@@ -29,14 +29,16 @@
                 @auth
                     <div class="user">
                         <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{Auth::user()->name}}
+                            {{Auth::user()->name}}{{Auth::user()->roles->pluck('name')}}
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('myprofile')}}">Profile</a>
                             <a class="dropdown-item" href="{{route('user_attendance')}}">My Attendance</a>
 
                             <a class="dropdown-item" href="{{route('myreviews')}}">My Reviews</a>
-                            <a class="dropdown-item" href="/admin" target="_blank">Admin Panel</a>
+
+                            <a class="dropdown-item" href="{{route('adminhome')}}" target="_blank">Admin Panel</a>
+
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                         </div>

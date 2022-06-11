@@ -27,6 +27,7 @@
             <a href="{{route('admin_message')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Messages</a>
             <a href="{{route('admin_review')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Reviews</a>
             <a href="{{route('admin_faq')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Faq</a>
+            <a href="{{route('admin_users')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Users</a>
             @auth
 
             <a href="{{route('logout')}}" class="nav-item nav-link" ><i class="far fa-file-alt me-2"></i>Logout</a>

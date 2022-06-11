@@ -1,6 +1,6 @@
 @php
     $setting= \App\Http\Controllers\HomeController::getsetting();
- $countattendance= \App\Http\Controllers\HomeController::countattendance($data->id);
+ $countattendance= \App\Http\Controllers\AttendanceController::countattendance($data->id);
 @endphp
 @extends('layouts.home')
 
@@ -49,7 +49,7 @@
                                         <th scope="col">Survey</th>
 
                                         <th scope="col">Answer</th>
-                                        <th scope="col">Rate</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Image</th>
 
 

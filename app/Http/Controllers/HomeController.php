@@ -23,10 +23,7 @@ class HomeController extends Controller
     {
         return Setting::first();
     }
-    public static function countattendance($id)
-    {
-        return Attendance::where('question_id', $id)->count();
-    }
+
 
     public static function countreview($id)
     {

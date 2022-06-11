@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('attendances', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('user_id');
-            $table->integer('survey_id');
-            $table->integer('question_id');
-            $table->string('answer')->default('0');
-            $table->integer('status')->default('0');
-
+            $table->string('name',20);
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('roles');
     }
 };

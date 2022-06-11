@@ -70,10 +70,10 @@
 
                                     <div class="mb-3">
                                         <label>Detail</label>
-                                        <textarea id="summernote" type="text" name="detail">{{$data->detail}}</textarea>
-                                        <script>
-                                            CKEDITOR.replace( 'detail' );
-                                        </script>
+                                      <textarea name="detail"></textarea>
+                <script>
+                        CKEDITOR.replace( 'detail' );
+                </script>
 
 
                                     </div>

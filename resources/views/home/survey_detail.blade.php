@@ -52,16 +52,17 @@ $countreview= \App\Http\Controllers\HomeController::countreview($data->id);
           @csrf
     <div class="form-check mb-2">
          @foreach($datalist as $rs)
-
-      <input  class="form-check-input" type="radio"  name="answer" value="{{$rs->title}}"/>
-        <br>
-
+            <label class="form-check-label" for="radioExample1">
+      <input  class="form-check-input" type="checkbox" name="answer" value="{{$rs->title}}"/>
 
 
         <br>
+
+        <br>
+
         <img src="{{Storage::url($rs->image)}}" style="height: 200px; width: 200px;" >
 
-      <label class="form-check-label" for="radioExample1">
+
           <div class="text-end">
     <button type="submit" value="{{$rs->id}}" name="question_id"  class="btn btn-primary">{{$rs->title}}</button>
   </div>
@@ -69,12 +70,7 @@ $countreview= \App\Http\Controllers\HomeController::countreview($data->id);
 
              <br>
 
-
-
-
                 <br>
-
-
 @endforeach
         </div>
 </form>

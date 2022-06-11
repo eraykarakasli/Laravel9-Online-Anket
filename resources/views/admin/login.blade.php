@@ -41,7 +41,7 @@
         </div>
     </div>
     <!-- Spinner End -->
-
+@include('home.message')
 
     <!-- Sign In Start -->
     <div class="container-fluid">

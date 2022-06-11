@@ -96,5 +96,10 @@ class AttendanceController extends Controller
         $data->delete();
         return redirect()->back();
     }
+    public static function countattendance($id)
+    {
+        return Attendance::where('question_id',$id)->count('question_id');
+    }
+
 
 }
